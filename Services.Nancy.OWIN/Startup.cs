@@ -1,8 +1,7 @@
-﻿using Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Microsoft.Owin.Extensions;
+using Owin;
+
+
 
 namespace Services.Nancy.OWIN
 {
@@ -11,6 +10,7 @@ namespace Services.Nancy.OWIN
         public void Configuration(IAppBuilder appBuilder)
         {
             appBuilder.UseNancy();
+            appBuilder.UseStageMarker(PipelineStage.MapHandler);
         }
     }
 }
