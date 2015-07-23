@@ -16,5 +16,23 @@ namespace SelfHosting.Nancy.OWIN
                 return new SelfHostingPathProvider();
             }
         }
+
+
+        protected override global::Nancy.Diagnostics.DiagnosticsConfiguration DiagnosticsConfiguration
+        {
+            get
+            {
+                var v = base.DiagnosticsConfiguration;
+                v.Password = "tets";
+                return v;
+            }
+        }
+
+        protected override void ApplicationStartup(global::Nancy.TinyIoc.TinyIoCContainer container, global::Nancy.Bootstrapper.IPipelines pipelines)
+        {
+            //base.ApplicationStartup(container, pipelines);
+
+        }
+
     }
 }

@@ -7,8 +7,24 @@ using System.Threading.Tasks;
 
 namespace SelfHosting.Nancy
 {
-    public class Bootstrapper:DefaultNancyBootstrapper
+    public class Bootstrapper : DefaultNancyBootstrapper
     {
+        protected override global::Nancy.Diagnostics.DiagnosticsConfiguration DiagnosticsConfiguration
+        {
+            get
+            {
+                var v = base.DiagnosticsConfiguration;
+                v.Password = "tets";
+                return v;
+            }
+        }
+
+        protected override void ApplicationStartup(global::Nancy.TinyIoc.TinyIoCContainer container, global::Nancy.Bootstrapper.IPipelines pipelines)
+        {
+            //base.ApplicationStartup(container, pipelines);
+
+        }
+
         protected override IRootPathProvider RootPathProvider
         {
             get

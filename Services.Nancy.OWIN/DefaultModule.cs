@@ -10,7 +10,7 @@ namespace Services.Nancy.OWIN
     {
         public DefaultModule()
         {
-            Get["/"] = param => View["Index.html"];
+            Get["/"] = param => View["Index"];
         }
     }
 }
