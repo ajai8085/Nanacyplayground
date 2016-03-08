@@ -11,7 +11,7 @@ namespace SelfHosting.Nancy
     {
         public HomeModule():base("/Home")
         {
-            Get["/"] = param => View["Index.html"];
+            Get["/"] = param => View["Index", new {Now = DateTime.Now}];
         }
     }
 }

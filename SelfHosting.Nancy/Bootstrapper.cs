@@ -22,6 +22,7 @@ namespace SelfHosting.Nancy
         protected override void ApplicationStartup(global::Nancy.TinyIoc.TinyIoCContainer container, global::Nancy.Bootstrapper.IPipelines pipelines)
         {
             //base.ApplicationStartup(container, pipelines);
+            StaticConfiguration.EnableRequestTracing = true;
 
         }
 
