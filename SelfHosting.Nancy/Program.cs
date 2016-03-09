@@ -1,9 +1,6 @@
 ﻿using Nancy.Hosting.Self;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace SelfHosting.Nancy
 {
@@ -11,12 +8,22 @@ namespace SelfHosting.Nancy
     {
         static void Main(string[] args)
         {
-            using (var host = new NancyHost(new Uri("http://localhost:12345")))
+            string url =@"http://localhost:12345";
+            using (var host = new NancyHost(new Uri(url)))
             {
                 host.Start();
 
+                Process.Start(@"chrome.exe", string.Format("--incognito {0}", url));
+                Console.WriteLine("press any key to stop");
                 Console.ReadLine();
+                host.Stop();
             }
+            
+        }
+
+        private static void OpenUrl(string askedServer, int port)
+        {
+            var url = string.Format(@"http://{0}:{1}", askedServer, port);
             
         }
     }

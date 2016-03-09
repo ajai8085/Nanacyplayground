@@ -9,7 +9,7 @@ namespace SelfHosting.Nancy
 {
     public class HomeModule:NancyModule
     {
-        public HomeModule():base("/Home")
+        public HomeModule()
         {
             Get["/"] = param => View["Index", new {Now = DateTime.Now}];
         }
