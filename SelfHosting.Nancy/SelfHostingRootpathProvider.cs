@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace SelfHosting.Nancy
 {
+    //Not used , use this class if you wish to avoid copy to output for views and content folders 
     public class SelfHostingRootPathProvider : IRootPathProvider
     {
         readonly IRootPathProvider _rootPathProvider;

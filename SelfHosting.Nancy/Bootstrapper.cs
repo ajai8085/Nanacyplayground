@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nancy.Hosting.Self;
 
 namespace SelfHosting.Nancy
 {
@@ -30,7 +31,8 @@ namespace SelfHosting.Nancy
         {
             get
             {
-                return new SelfHostingRootPathProvider();
+                //return new SelfHostingRootPathProvider();
+                return new FileSystemRootPathProvider();
             }
         }
     }
