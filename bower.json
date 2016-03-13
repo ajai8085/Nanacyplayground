@@ -1,0 +1,19 @@
+{
+  "name": "Nanacyplayground",
+  "homepage": "https://github.com/ajai8085/Nanacyplayground",
+  "authors": [
+    "Ajai <ajai.np@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "SelfHosting.Nancy/Views/content/vendor",
+    "test",
+    "tests"
+  ]
+}
