@@ -8,22 +8,21 @@ namespace SelfHosting.Nancy
     {
         static void Main(string[] args)
         {
-            string url =@"http://localhost:12345";
+            const string url = @"http://localhost:12345";
             using (var host = new NancyHost(new Uri(url)))
             {
                 host.Start();
 
-                Process.Start(@"chrome.exe", string.Format("--incognito {0}", url));
+                Process.Start(@"chrome.exe", $"--incognito {url}");
                 Console.WriteLine("press any key to stop");
                 Console.ReadLine();
                 host.Stop();
             }
-            
         }
 
         private static void OpenUrl(string askedServer, int port)
         {
-            var url = string.Format(@"http://{0}:{1}", askedServer, port);
+            var url = $@"http://{askedServer}:{port}";
             
         }
     }
