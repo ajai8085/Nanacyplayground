@@ -15,5 +15,8 @@
     "SelfHosting.Nancy/Views/content/vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
 }

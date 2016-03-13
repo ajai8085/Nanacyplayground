@@ -67,7 +67,7 @@ namespace SelfHosting.Nancy
         {
             base.ConfigureConventions(nancyConventions);
 
-            nancyConventions.StaticContentsConventions.Add(AddStaticResourcePath("/Content", Assembly.GetAssembly(typeof(Bootstrapper)), "SelfHosting.Nancy.Content"));
+            nancyConventions.StaticContentsConventions.Add(AddStaticResourcePath("/content", Assembly.GetAssembly(typeof(Bootstrapper)), "SelfHosting.Nancy.Views.content"));
         }
 
         private static Func<NancyContext, string, Response> AddStaticResourcePath(string requestedPath, Assembly assembly, string namespacePrefix)
@@ -75,7 +75,7 @@ namespace SelfHosting.Nancy
             return (context, s) =>
             {
                 var path = context.Request.Path;
-                if (!path.StartsWith(requestedPath))
+                if (!path.StartsWith(requestedPath, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return null;
                 }
@@ -94,7 +94,7 @@ namespace SelfHosting.Nancy
                     name = adjustedPath;
                     resourcePath = namespacePrefix;
                 }
-                return new EmbeddedFileResponse(assembly, resourcePath, name);
+                return new EmbeddedFileResponse(assembly, resourcePath.Replace("-", "_"), name);
             };
         }
     }
