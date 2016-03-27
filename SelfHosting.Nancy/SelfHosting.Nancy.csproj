@@ -254,6 +254,8 @@
     <EmbeddedResource Include="Views\content\public\app\app.js" />
     <EmbeddedResource Include="Views\content\public\app\common\services\productResuource.js" />
     <EmbeddedResource Include="Views\content\public\vendor\angular-resource.min.js" />
+    <EmbeddedResource Include="Views\content\public\vendor\angular-mocks.js" />
+    <EmbeddedResource Include="Views\content\public\app\common\services\productResourceMock.js" />
     <Content Include="Views\content\vendor\angular\angular-ui\.gitignore" />
     <Content Include="Views\content\vendor\angular\angular-ui\build\angular-ui-ieshiv.js" />
     <EmbeddedResource Include="Views\content\vendor\angular\angular-ui\build\angular-ui-ieshiv.min.js" />
