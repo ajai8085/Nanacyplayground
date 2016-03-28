@@ -2,20 +2,13 @@
 
     "use strict";
 
-    angular.module("productManagement").controller("ProductDetailCtrl", productDetailCtrl);
+    angular.module("productManagement").controller("ProductDetailCtrl",["product", productDetailCtrl]);
 
-    function productDetailCtrl() {
+    function productDetailCtrl(product) {
 
         var vm = this;
 
-        vm.product = {
-            "productId": 1,
-            "productName": "Sample product 1",
-            "price": 19.89,
-            "cost": 9.0,
-            "imageUrl": "http://",
-            tags: ["leaf", "tool"]
-        };
+        vm.product = product;
 
         vm.title = "Product Details: " + vm.product.productName;
        

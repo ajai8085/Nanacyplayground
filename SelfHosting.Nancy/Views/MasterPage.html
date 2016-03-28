@@ -18,9 +18,11 @@
 
     <script src="content/vendor/jquery/dist/jquery.min.js"></script>
     <script src="content/vendor/angular/angular.min.js"></script>
-    <script src="content/vendor/angular-ui/build/angular-ui-ieshiv.min.js"></script>
+    <!--<script src="content/vendor/angular-ui/build/angular-ui-ieshiv.min.js"></script>-->
     <script src="content/vendor/angular-ui/build/angular-ui.min.js"></script>
     <script src="content/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="content/public/vendor/d3.min.js"></script>
+    <script src="content/public/vendor/angular-charts.min.js"></script>
     <script src="content/public/vendor/angular-resource.min.js"></script>
     <script src="content/public/vendor/angular-mocks.js"></script>
     <script src="content/public/vendor/angular-ui-router.min.js"></script>
@@ -32,7 +34,8 @@
     <script src="content/public/app/common/services/productresuource.js"></script>
 
     <script src="content/public/app/controllers/producteditctrl.js"></script>
-    <script src="content/public/app/controllers/productdetailctrl.js"></script>
+<script src="content/public/app/controllers/productdetailctrl.js"></script>
+    <script src="content/public/app/controllers/priceanalyticsctrl.js"></script>
 <!--<div class="navbar navbar-inverse">
     <div class="container">
         <a class="navbar-brand">Product management</a>
@@ -71,7 +74,8 @@
                     <li><a data-ui-sref="productList">Product List</a></li>
           
                     <li><a data-ui-sref="productEdit({productId:0})"><i class="glyphicon glyphicon-plus"></i>Add product list</a></li>
-    
+
+                    <li><a data-ui-sref="priceAnalytics">Analytics</a></li>
                 </ul>
               
             </div>

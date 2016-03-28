@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Products.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="HomeModule.cs" />
     <Compile Include="Program.cs" />
@@ -263,6 +264,13 @@
     <EmbeddedResource Include="Views\content\public\app\controllers\productEditCtrl.js" />
     <EmbeddedResource Include="Views\content\public\app\controllers\productDetailView.html" />
     <EmbeddedResource Include="Views\content\public\app\controllers\productDetailCtrl.js" />
+    <EmbeddedResource Include="Views\content\public\vendor\angular-charts.min.js" />
+    <EmbeddedResource Include="Views\content\public\vendor\d3.min.js" />
+    <EmbeddedResource Include="Views\content\public\app\controllers\priceAnalyticsCtrl.js" />
+    <EmbeddedResource Include="Views\content\public\app\controllers\priceAnalyticsView.html" />
+    <EmbeddedResource Include="Views\content\public\app\controllers\productEditInfoView.html" />
+    <EmbeddedResource Include="Views\content\public\app\controllers\productEditPriceView.html" />
+    <EmbeddedResource Include="Views\content\public\app\controllers\productEditTagsView.html" />
     <Content Include="Views\content\vendor\angular\angular-ui\.gitignore" />
     <Content Include="Views\content\vendor\angular\angular-ui\build\angular-ui-ieshiv.js" />
     <EmbeddedResource Include="Views\content\vendor\angular\angular-ui\build\angular-ui-ieshiv.min.js" />
