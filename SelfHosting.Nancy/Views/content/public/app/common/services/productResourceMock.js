@@ -57,5 +57,7 @@
         ];
 
         $httpBackend.whenGET("/api/products").respond(products);
+
+        $httpBackend.whenGET(/controllers\/.*/).passThrough();
     });
 }())

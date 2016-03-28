@@ -6,7 +6,8 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="/content/public/css/default.css" />
 
-    <link rel="stylesheet" type="text/css" href="/content/vendor/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="/content/vendor/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/content/vendor/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/content/vendor/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/content/vendor/angular/angular-csp.css" />
 
@@ -14,58 +15,80 @@
 </head>
 <body class="boxed " ng-app="productManagement">
 
-    <h1>Hello world Self Hosting nancy{{10+11}}</h1>
 
-    <div class="panel panel-primary">
+    <script src="content/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="content/vendor/angular/angular.min.js"></script>
+    <script src="content/vendor/angular-ui/build/angular-ui-ieshiv.min.js"></script>
+    <script src="content/vendor/angular-ui/build/angular-ui.min.js"></script>
+    <script src="content/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="content/public/vendor/angular-resource.min.js"></script>
+    <script src="content/public/vendor/angular-mocks.js"></script>
+    <script src="content/public/vendor/angular-ui-router.min.js"></script>
+    <script src="content/public/app/app.js"></script>
 
-        <div class="panel-heading">Heading</div>
-        <div class="panel-body">
+    <script src="content/public/app/controllers/productlistctrl.js"></script>
+    <script src="content/public/app/common/services/common.services.js"></script>
+    <script src="content/public/app/common/services/productResourceMock.js"></script>
+    <script src="content/public/app/common/services/productresuource.js"></script>
 
-
-            <table class="table" ng-controller="ProductListCtrl as vm">
-
-                <thead>
-                    <tr>
-                        <td>Product name</td>
-                        <td>Price </td>
-                        <td>
-                            <button type="button" ng-click="vm.toggleImage()" class="btn btn-primary">
-                                {{vm.showImage?"Hide ":"Show "}}  Image
-                            </button>
-                        </td>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr data-ng-repeat="product in vm.products">
-                        <td>{{product.productName}}</td>
-                        <td>{{product.price|currency}}</td>
-                        <td>
-                            <img ng-if="vm.showImage"
-                                 ng-src="{{product.imageUrl}}"
-                                 style="width: 50px; margin: 2px;" title="{{product.productName}}" />
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-
+    <script src="content/public/app/controllers/producteditctrl.js"></script>
+    <script src="content/public/app/controllers/productdetailctrl.js"></script>
+<!--<div class="navbar navbar-inverse">
+    <div class="container">
+        <a class="navbar-brand">Product management</a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a>Product list</a></li>
+                <li><a><i class="glyphicon glyphicon-plus"></i>Add product list</a></li>
+            </ul>
+        </div>
+    </div>
+</div>-->
 
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <a asp-controller="Home" class="navbar-brand" data-ui-sref="home">Product Management</a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a data-ui-sref="productList">Product List</a></li>
+          
+                    <li><a data-ui-sref="productEdit({productId:0})"><i class="glyphicon glyphicon-plus"></i>Add product list</a></li>
+    
+                </ul>
+              
+            </div>
+        </div>
     </div>
 
-    <script language="javascript" type="text/javascript" src="content/vendor/jquery/dist/jquery.min.js"></script>
-    <script language="javascript" type="text/javascript" src="content/vendor/angular/angular.min.js"></script>
-    <script language="javascript" type="text/javascript" src="content/vendor/angular-ui/build/angular-ui-ieshiv.min.js"></script>
-    <script language="javascript" type="text/javascript" src="content/vendor/angular-ui/build/angular-ui.min.js"></script>
-    <script language="javascript" type="text/javascript" src="content/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script language="javascript" type="text/javascript" src="content/public/vendor/angular-resource.min.js"></script>
-    <script language="javascript" type="text/javascript" src="content/public/vendor/angular-mocks.js"></script>
-    <script language="javascript" type="text/javascript" src="content/public/app/app.js"></script>
+    <h1>Hello world Self Hosting nancy{{10+11}}</h1>
+<div class="container">
+    <div data-ui-view>
 
-    <script language="javascript" type="text/javascript" src="content/public/app/controllers/productlistctrl.js"></script>
-<script language="javascript" type="text/javascript" src="content/public/app/common/services/common.services.js"></script>
-    <script language="javascript" type="text/javascript" src="content/public/app/common/services/productResourceMock.js"></script>
-    <script language="javascript" type="text/javascript" src="content/public/app/common/services/productresuource.js"></script>
+    </div>
+</div>
+
+
+<footer>
+    <p>&copy; 2016 - WebApplication1</p>
+</footer>
+
 </body>
 </html>
